@@ -1,0 +1,13 @@
+## Bad Smells:
+- Duplicated Code (part 1)[https://github.com/wafibismail/refactoring-practice/blob/master/part01-duplicated_code.md]
+- Long Method
+- Complex Conditioning Statements
+- Primitive Obsession
+- Indecent Exposure
+- Solution Sprawl
+- Alternative Classes with Different Interfaces
+- Lazy Classes
+- Large Classes
+- Switch Statements
+- Combinatorial Explosions
+- Oddball Solutions
