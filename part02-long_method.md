@@ -71,7 +71,7 @@ public class FootballPlayer40YardDashInfo {
 The FootballPlayer40YardDashInfo.printPlayerInfo method is quite long. Some parts could be extracted into separate methods with separate names.
 
 ```Java
-//Original
+//Original printPlayerInfo method
 public void printPlayerInfo() {
     double avg40YdTime = 0.0;
 
@@ -102,12 +102,13 @@ public void printPlayerInfo() {
 ```
 
 ```Java
-//After method extraction
+//printPlayerInfo - After method extraction
 public void printPlayerInfo() {
     printTitles();
 
     printPlayersWith40Avg()
 }
+
 public void printTitles() {
     System.out.printf("%-15s %15s", "Name", "Avg 40 Times\n");
 
@@ -116,6 +117,7 @@ public void printTitles() {
 
     System.out.println();
 }
+
 public void printPlayersWith40Avg() {
     for(FootballPlayer player : players) {
         System.out.printf("%-19s", player.getName());
@@ -136,7 +138,44 @@ public void printPlayersWith40Avg() {
 }
 ```
 
-Still, after extraction, there are still some fragments of code that can be extracted into methods with descriptive names.
+Still, after extraction, there are still some fragments of code that can be extracted into methods with descriptive names, e.g. the code to print dashes multiple times.
 
 ```Java
+//printPlayerInfo - After further method extraction
+public void printPlayerInfo() {
+    printTitles();
+
+    printPlayersWith40Avg()
+}
+
+public void printTitles() {
+    System.out.printf("%-15s %15s", "Name", "Avg 40 Times\n");
+    printCharMultTimes('_', 30);
+}
+
+public void printCharMultTimes(char charToPrint, int howManyTimes) {
+    //Print dashes under titles
+    for(int i = 0; i < howManyTimes; i++) { System.out.print(char); }
+
+    System.out.println();
+}
+
+public void printPlayersWith40Avg() {
+    for(FootballPlayer player : players) {
+        System.out.printf("%-19s", player.getName());
+
+        double total40YdDashTimes = 0.0;
+        double[] fortyYardDashTimes = player.get40YdDashTimes();
+
+        for(int i = 0; i < player.get40YardDashTimes().length; i++) {
+            total40YardDashTimes += fortyYardDashTimes[i];
+        }
+
+        double avg40YdTime = total40YdDashTimes / player.get40YdDashTimes().length;
+        
+        System.out.printf("%1$.2f", avg40YdTime);
+
+        System.out.println();
+    }
+}
 ```
