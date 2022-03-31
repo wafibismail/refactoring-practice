@@ -29,7 +29,7 @@ public class FootballPlayer {
 
 Error occurs with the above code due to two constructors having the same attribute signature (1 int and nothing else)<br>
 <br>
-The solution:
+The solution - Creation Methods:
 
 ```Java
 public class FootballPlayer {
@@ -59,6 +59,10 @@ public class FootballPlayer {
     public static FootballPlayer createQB(double passerRating, int rushingYards) {
         return new FootballPlayer(passerRating, rushingYards, 0, 0, 0, 0, 0.0, 0.0, 0.0);
     }
+    public static FootballPlayer createRB(int rushingYards, int receivingYards) {
+        return new FootballPlayer(0.0, rushingYards, receivingYards, 0, 0, 0, 0.0, 0.0, 0.0);
+    }
+    ///...etc....
     public static void main(String[] args){
         FootballPlayer aaronRogers = FootballPlayer.createQB(108.0, 259);
         System.out.println("Aaron Rogers' Passer Rating: "+aaronRogers.getPasserRating());
