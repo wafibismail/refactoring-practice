@@ -5,7 +5,7 @@ Points (uses of method extractions):
 - Make code as readable as comments
 
 ```Java
-//class definition
+//FootballPlayer class definition
 public class FootballPlayer {
     private String name = "";
     private double[] fortyYardDashTimes = null;
