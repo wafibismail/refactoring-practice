@@ -102,7 +102,7 @@ public void printPlayerInfo() {
 ```
 
 ```Java
-//printPlayerInfo - After method extraction
+//printPlayerInfo - After extracting code fragments that print the titles and player avg's into separate methods
 public void printPlayerInfo() {
     printTitles();
 
