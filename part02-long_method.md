@@ -150,7 +150,7 @@ public void printPlayerInfo() {
 
 public void printTitles() {
     System.out.printf("%-15s %15s", "Name", "Avg 40 Times\n");
-    
+
     printCharMultTimes('_', 30);
 }
 
@@ -180,3 +180,108 @@ public void printPlayersWith40Avg() {
     }
 }
 ```
+
+After method extraction:
+
+```Java
+//FootballPlayer class definition
+public class FootballPlayer {
+    private String name = "";
+    private double[] fortyYardDashTimes = null;
+
+    public String getName() { return name; }
+
+    public double[] get40YardDashTimes() {return fortyYardDashTimes; }
+
+    FootballPlayer(String name, double[] fortyYardDashTimes) {
+        this.name = name;
+        this.fortyYardDashTimes = fortyYardDashTimes;
+    }
+}
+
+//main class
+import java.util.ArrayList;
+public class FootballPlayer40YardDashInfo {
+    ArrayList<FootballPlayer> players = new ArrayList<FootballPlayer>();
+
+    public void addFootballPlayer(FootballPlayer player){
+        players.add(player);
+    }
+
+    public void printPlayerInfo() {
+        printTitles();
+
+        printPlayersWith40Avg()
+    }
+
+    public void printTitles() {
+        System.out.printf("%-15s %15s", "Name", "Avg 40 Times\n");
+
+        printCharMultTimes('_', 30);
+    }
+
+    public void printCharMultTimes(char charToPrint, int howManyTimes) {
+        //Print dashes under titles
+        for(int i = 0; i < howManyTimes; i++) { System.out.print(char); }
+
+        System.out.println();
+    }
+
+    public void printPlayersWith40Avg() {
+        for(FootballPlayer player : players) {
+            System.out.printf("%-19s", player.getName());
+
+            double total40YdDashTimes = 0.0;
+            double[] fortyYardDashTimes = player.get40YdDashTimes();
+
+            for(int i = 0; i < player.get40YardDashTimes().length; i++) {
+                total40YardDashTimes += fortyYardDashTimes[i];
+            }
+
+            double avg40YdTime = total40YdDashTimes / player.get40YdDashTimes().length;
+
+            System.out.printf("%1$.2f", avg40YdTime);
+
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        FootballPlayer40YardDashInfo fb40Dash = new FootballPlayer40YardDashInfo();
+
+        //E.g. add Clark Kent
+
+        double cKent40YdDashTimes[] = {4.36, 4.39, 4.41};
+        FootballPlayer clarkKent = new FootballPlayer("Clark Kent", cKent40YdDashTimes);
+        fb40Dash.addFootballPlayer(clarkKent);
+    }
+}
+```
+
+### When not to perform this method extraction:
+
+```Java
+double average = 0.0;
+double[] dashTimes {4.36, 4.39, 4.41};
+for(int i = 0; i < dashTimes.length; i++){
+    totalDashTimes += dashTimes[i];
+}
+average = totalDashTimes / dashTimes.length;
+```
+
+Question: How would we extract all this while keeping the local variable "average" easy to deal with?
+
+```Java
+double[] dashTimes {4.36, 4.39, 4.41};
+double average = getAvgDashTime(dashTimes);
+
+public static double getAvgDashTime(double[] dashTimes){
+    double totalDashTimes = 0.0;
+    for(int i = 0; i < dashTimes.length; i++){
+        totalDashTimes += dashTimes[i];
+    }
+    return totalDashTimes / dashTimes.length;
+}
+```
+
+To be continued, from 9:37 of video 2 of the playlist
