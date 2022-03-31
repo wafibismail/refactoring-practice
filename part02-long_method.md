@@ -150,6 +150,7 @@ public void printPlayerInfo() {
 
 public void printTitles() {
     System.out.printf("%-15s %15s", "Name", "Avg 40 Times\n");
+    
     printCharMultTimes('_', 30);
 }
 
