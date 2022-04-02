@@ -153,6 +153,6 @@ public double getTotalCost(){
 }
 ```
 
-As can be seen avode, extracting the conditional statements into explaining variables makes the code more understandable <br>
+As can be seen above, extracting the conditional statements into explaining variables makes the code more understandable <br>
 <br>
 
