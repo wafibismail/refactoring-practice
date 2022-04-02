@@ -184,20 +184,26 @@ public void printPlayersWith40Avg() {
 ### Another example:
 
 ```Java
-double average = 0.0;
-double[] dashTimes {4.36, 4.39, 4.41};
-for(int i = 0; i < dashTimes.length; i++){
-    totalDashTimes += dashTimes[i];
+//Original code: 6 lines long
+public static void main(String[] args) {
+    double average = 0.0;
+    double[] dashTimes {4.36, 4.39, 4.41};
+    for(int i = 0; i < dashTimes.length; i++){
+        totalDashTimes += dashTimes[i];
+    }
+    average = totalDashTimes / dashTimes.length;
 }
-average = totalDashTimes / dashTimes.length;
 ```
 
 Question: How do we keep the local variable "average" easy to deal with while extracting the rest of the code?
 
 ```Java
-double[] dashTimes {4.36, 4.39, 4.41};
-double average = getAvgDashTime(dashTimes);
-
+//Refactored: 2 lines of code
+public static void main(String[] args) {
+    double[] dashTimes {4.36, 4.39, 4.41};
+    double average = getAvgDashTime(dashTimes);
+}
+//Try to keep methods between 5 to 10 lines long, with descriptive names
 public static double getAvgDashTime(double[] dashTimes){
     double totalDashTimes = 0.0;
     for(int i = 0; i < dashTimes.length; i++){
@@ -207,4 +213,8 @@ public static double getAvgDashTime(double[] dashTimes){
 }
 ```
 
-To be continued, from 9:37 of video 2 of the playlist
+## When to NOT extract methods:
+
+```Java
+//tbc
+```
