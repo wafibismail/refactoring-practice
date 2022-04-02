@@ -1,4 +1,4 @@
-# [Not yet finished] Using Variables to Write Understandable Code
+# Using Variables to Write Understandable Code
 
 - The approach to use when method extraction is not an option
 
