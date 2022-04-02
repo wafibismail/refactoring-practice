@@ -1,4 +1,4 @@
-## Extracting Methods (not finished yet)
+## Extracting Methods
 
 Points (uses of method extractions):
 - Turn code fragments into methods with descriptive names
@@ -222,7 +222,7 @@ public static double getAvgDashTime(double[] dashTimes){
 public static void main(String[] args) {
     String inTop15 = checkIfInTop15(avg40YdTime) ? " *Top 15\n" : "\n";
 }
-public boolean checkIfInTop15(double avg40YdTime) {
+public static boolean checkIfInTop15(double avg40YdTime) {
     return avg40YdTime < 4.41;
 }
 ```
@@ -237,4 +237,61 @@ public static void main(String[] args) {
 ```
 
 It is evident that extracting the boolean expression into a method does not make the code clearer. In fact it does the opposite. <br>
-In cases like this, it is better to just leave the code in one place.
+In cases like this e.g. doing conditionals in expressions, it is better to just leave the code in one place.
+
+## Temps
+
+When to get rid of temps?
+- The temp is used once and doesn't add to understanding (example below)
+- The temp holds the value of an expression
+
+```Java
+//Original
+public static void main(String[] args) {
+    double dashTime = 4.50;
+
+    final double avg40YdDash = getAvgDashTime();
+
+    String dashGrade = ((dashTime <= avg40YdDash) ? "Good" : "Bad");
+
+    System.out.println("That was a " + dashGrade + " time)
+}
+```
+
+```Java
+//Refactored
+public static void main(String[] args) {
+    double dashTime = 4.50;
+
+    String dashGrade = ((dashTime <= getAvgDashTime()) ? "Good" : "Bad");
+
+    System.out.println("That was a " + dashGrade + " time)
+}
+```
+
+#### Replacing temp variables with a query
+
+```Java
+public static void main(String[] args) {
+    //...
+    double avgDashTime = totalDashTime / totalDashes;
+
+    if(avgDashTime > 4.41){
+        System.out.println("Average Time");
+    }
+}
+```
+
+```Java
+public static void main(String[] args) {
+    //...
+    if(avgDashTime() > 4.41){
+        System.out.println("Average Time");
+    }
+}
+public static double avgDashTime(){
+    return totalDashTime / totalDashes;
+}
+```
+
+The latter does not make the code less understandable. It is just as understandable as the original code with the advantage of bringing the expression elsewhere so the overall code is more understandable.
