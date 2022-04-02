@@ -200,3 +200,43 @@ public void getCostOfProducts(){
 ```
 
 After refactoring by extracting the calculations into explaining variables, the code is not only shorter, but also much more understandable.
+
+
+## About temporary variable - why is it bad to assign many values to them?
+
+```Java
+double temp = totalCost / numberOfProducts; // Individual Product Cost
+
+temp = temp + shipping; // Individual Product Cost + Shipping
+
+temp = temp - discount; // Individual Product Cost + Shipping / discount
+```
+
+The problem with the code above is that it is likely that it cannot be remembered easily e.g. when returning to the code years from when it's written. <br>
+<br>
+Temporary variable:
+- Don't assign multiple different values to it
+- Always name them descriptively
+
+```Java
+double indivProductCost = totalCost / numberOfProducts;
+
+double prodCostAndShipping = indivProductCost + shipping;
+
+double discountedProductCost = prodCostAndShipping - discount;
+```
+
+Longer variable name, but more easily understandable especially in the long term.
+
+### Another DON'T - DON'T assign values to parameters passed in methods
+
+```Java
+public double getTotPrice(double quantity, double price, double shippingCost, double discount){
+
+    price = price + shippingCost;
+    price = price * quantity;
+    return price - discount;
+}
+```
+
+The code snippet above may look convenient, but codes written this way can get very difficult to understand. Better to use temporary variables with descriptive names instead.
