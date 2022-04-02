@@ -1,4 +1,4 @@
-# Extracting Methods, Fields, Classes and Eclipse Shortcuts
+# Extracting Methods, Fields, Classes
 
 ```Java
 public class Customer {
