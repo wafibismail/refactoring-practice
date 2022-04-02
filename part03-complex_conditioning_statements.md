@@ -1,5 +1,7 @@
 # [Not yet finished] Using Variables to Write Understandable Code
 
+- The approach to use when method extraction is not an option
+
 Example (of using an "explaining variable"):
 
 ```Java
@@ -67,11 +69,11 @@ public class Store {
 
         for(Product product : theProducts){
 
-            System.out.println("Total cost for " + product.getQuantity() + " " + product.getName());
+            System.out.println("Total cost for " + product.getQuantity() + " " + product.getName() + "s is $" + product.getTotalCost());
 
             System.out.println("Cost per product " + product.getTotalCost() / product.getQuantity());
 
-            System.out.println("Savings per product " + ((product.getPrice() + product.getShippingCost()) - product.getTotalCost()) / product.getQuantity());
+            System.out.println("Savings per product " + ((product.getPrice() + product.getShippingCost()) - (product.getTotalCost() / product.getQuantity())) + "\n");
         }
     }
 
@@ -151,6 +153,6 @@ public double getTotalCost(){
 }
 ```
 
-Extracting the conditional statements into explaining variables makes the code more understandable <br>
+As can be seen avode, extracting the conditional statements into explaining variables makes the code more understandable <br>
 <br>
 
