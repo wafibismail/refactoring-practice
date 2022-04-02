@@ -1,7 +1,7 @@
 ## Bad Smells:
 - Duplicated Code ([part 1](https://github.com/wafibismail/refactoring-practice/blob/master/part01-duplicated_code.md))
 - Long Method ([part 2](https://github.com/wafibismail/refactoring-practice/blob/master/part02-long_method.md))
-- Complex Conditioning Statements
+- Complex Conditioning Statements ([part 3](https://github.com/wafibismail/refactoring-practice/blob/master/part03-complex_conditioning_statements.md))
 - Primitive Obsession
 - Indecent Exposure
 - Solution Sprawl
