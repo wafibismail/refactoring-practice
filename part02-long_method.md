@@ -215,6 +215,26 @@ public static double getAvgDashTime(double[] dashTimes){
 
 ## When to NOT extract methods:
 
+- If the code is clear as a method (extracting does not make it more understandable), e.g.:
+
 ```Java
-//tbc
+//With method extraction
+public static void main(String[] args) {
+    String inTop15 = checkIfInTop15(avg40YdTime) ? " *Top 15\n" : "\n";
+}
+public boolean checkIfInTop15(double avg40YdTime) {
+    return avg40YdTime < 4.41;
+}
 ```
+
+When compared to:
+
+```Java
+//Without method extraction
+public static void main(String[] args) {
+    String inTop15 = (avg40YdTime < 4.41) ? " *Top 15\n" : "\n";
+}
+```
+
+It is evident that extracting the boolean expression into a method does not make the code clearer. In fact it does the opposite. <br>
+In cases like this, it is better to just leave the code in one place.
