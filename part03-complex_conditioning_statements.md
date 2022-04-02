@@ -156,3 +156,47 @@ public double getTotalCost(){
 As can be seen above, extracting the conditional statements into explaining variables makes the code more understandable <br>
 <br>
 
+Another example of using explaining variables, but now in the case of using them for complicated calculations that can't be extracted into methods:
+
+```Java
+//BEFORE - Store.getCostOfProducts
+public void getCostOfProducts(){
+
+    for(Product product : theProducts){
+
+        System.out.println("Total cost for " + product.getQuantity() + " " + product.getName() + "s is $" + product.getTotalCost());
+
+        System.out.println("Cost per product " + product.getTotalCost() / product.getQuantity());
+
+        System.out.println("Savings per product " + ((product.getPrice() + product.getShippingCost()) - (product.getTotalCost() / product.getQuantity())) + "\n");
+
+    }
+
+}
+```
+
+```Java
+//AFTER - Store.getCostOfProducts
+public void getCostOfProducts(){
+
+    for(Product product : theProducts){
+
+        final int numOfProducts = product.getQuantity();
+        final String prodName = product.getName();
+        final double cost = product.getTotalCost();
+
+        final double costWithDiscount = cost / numOfProducts;
+        final double costWithoutDiscount = product.getPrice() + product.getShippingCost();
+    
+        System.out.println("Total cost for " + numOfProducts + " " + prodName + "s is $" + cost);
+
+        System.out.println("Cost per product " + cost / numOfProducts);
+
+        System.out.println("Savings per product " + (costWithoutDiscount - costWithDiscount) + "\n");
+
+    }
+
+}
+```
+
+After refactoring by extracting the calculations into explaining variables, the code is not only shorter, but also much more understandable.
