@@ -204,7 +204,12 @@ After refactoring by extracting the calculations into explaining variables, the 
 
 ## About temporary variable - why is it bad to assign many values to them?
 
+Temporary variable:
+- Don't assign multiple different values to it
+- Always name them descriptively
+
 ```Java
+//bad code
 double temp = totalCost / numberOfProducts; // Individual Product Cost
 
 temp = temp + shipping; // Individual Product Cost + Shipping
@@ -213,12 +218,9 @@ temp = temp - discount; // Individual Product Cost + Shipping / discount
 ```
 
 The problem with the code above is that it is likely that it cannot be remembered easily e.g. when returning to the code years from when it's written. <br>
-<br>
-Temporary variable:
-- Don't assign multiple different values to it
-- Always name them descriptively
 
 ```Java
+//clean code
 double indivProductCost = totalCost / numberOfProducts;
 
 double prodCostAndShipping = indivProductCost + shipping;
