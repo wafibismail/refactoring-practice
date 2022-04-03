@@ -122,3 +122,11 @@ Topics covered by Derek:
 <br>
 
 ### Adapter Pattern ([Part 14](https://github.com/wafibismail/refactoring-practice/blob/master/part14-adapter_pattern.ts) - in TypeScript)
+
+Advantages:
+- Allows adding limitless amounts of subclasses without disturbing any code already written
+- Makes it easier to swap in code at runtime
+- Allows flexible use of method names, so we can choose names that make sense to us
+<br>
+
+### Replacing Primitive Types with A Class / Improve Type Safety ([Part 15](https://github.com/wafibismail/refactoring-practice/blob/master/part15-type_safety.ts) - in TypeScript)
