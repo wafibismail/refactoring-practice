@@ -64,10 +64,10 @@ primeTime.makeShipAttack();
     What about adding more subclasses of the new ship?
 */}{
 /*
-    The Adapter Pattern, allows us to add limitless amount of subclasses without disturbing any
+    The Adapter Pattern allows us to add limitless amounts of subclasses without disturbing any
     code already written, in addition to:
         - making it easier to swap in code at runtime
-        - allow us to communicate by method names that make sense to us 
+        - allowing us to communicate by method names that make sense to us 
 
     To be continued: https://youtu.be/cBEUlEHZuqw?t=164
 */}
