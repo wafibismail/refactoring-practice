@@ -147,3 +147,4 @@ Embellishment? It means special case behaviour
 
 About Decorator Pattern:
 - Place each embellisment into its own class
+  - which is a way better alternative to add new code to older classes, complicating them wherei they may have been compact and easy to understand to start with.
