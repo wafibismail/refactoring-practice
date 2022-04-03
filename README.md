@@ -24,7 +24,8 @@ Meaning signs that code needs refactoring:
 - Combinatorial Explosions
 - Oddball Solutions
 
-## Some Ways of Refactoring:
+## Bookmarks:
+(Some ways of refactoring)
 
 ### Creation Methods or Chaining Constructors ([Part 1](https://github.com/wafibismail/refactoring-practice/blob/master/part01-creation_method_or_chain_constructors.md) - in Java/md)
 
