@@ -138,3 +138,12 @@ Aim:
 How:
 - Protect the program from bad input
 - Replace a primitive data type with a class
+<br>
+
+### Using Decorator Pattern to Move Embellishments ([Part 16](https://github.com/wafibismail/refactoring-practice/blob/master/part16-decorator_pattern.ts) - in TypeScript)
+
+Embellishment? It means special case behaviour
+<br>
+
+About Decorator Pattern:
+- Place each embellisment into its own class
