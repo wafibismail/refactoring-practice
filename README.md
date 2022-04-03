@@ -142,9 +142,10 @@ How:
 
 ### Using Decorator Pattern to Move Embellishments ([Part 16](https://github.com/wafibismail/refactoring-practice/blob/master/part16-decorator_pattern.ts) - in TypeScript)
 
-Embellishment? It means special case behaviour
+Embellishment:
+- means special case behaviour
 <br>
 
 About Decorator Pattern:
 - Place each embellisment into its own class
-  - which is a way better alternative to add new code to older classes, complicating them wherei they may have been compact and easy to understand to start with.
+  - which is a way better alternative to adding new code to older classes and complicating them, where they may have been compact and easy to understand to start with.
