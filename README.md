@@ -100,7 +100,7 @@ Brief:
 ### Building Composites Using Builder Pattern ([Part 11](https://github.com/wafibismail/refactoring-practice/blob/master/part11-composite_from_builder_pattern.ts) - in TypeScript)
 
 Note:
-- Good to understand this part well. Derek says it's not taught in common textbooks.
+- Good to understand this part well. Might not be taught in common textbooks.
 <br>
 
 ### To be continued ([Part 12](https://github.com/wafibismail/refactoring-practice/blob/master/part12.ts) - in TypeScript)
