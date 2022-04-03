@@ -110,4 +110,14 @@ Approaches taken:
 - Use a **Collecting Parameter** to pass accumulated information
 <br>
 
-### To be continued ([Part 13](https://github.com/wafibismail/refactoring-practice/blob/master/part13.ts) - in TypeScript)
+### Replace Conditionals with Command Pattern ([Part 13](https://github.com/wafibismail/refactoring-practice/blob/master/part13-command_pattern.ts) - in TypeScript)
+
+Topics covered by Derek:
+- Review of Command Pattern
+- Show WHEN to use the Command Pattern
+- Show the flexibility the Command Pattern adds
+- Show how to replace conditionals with Command
+- Show how to store commands in an ArrayList (regular Array in the case of TypeScript)
+<br>
+
+### Adapter Pattern ([Part 14](https://github.com/wafibismail/refactoring-practice/blob/master/part14-adapter_pattern.ts) - in TypeScript)
