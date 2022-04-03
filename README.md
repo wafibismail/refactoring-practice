@@ -103,6 +103,11 @@ Note:
 - Good to understand this part well. Might not be taught in common textbooks.
 <br>
 
-### To be continued ([Part 12](https://github.com/wafibismail/refactoring-practice/blob/master/part12.ts) - in TypeScript)
+### Eliminate Large Accumulation Methods ([Part 12](https://github.com/wafibismail/refactoring-practice/blob/master/part12-collecting_parameters.ts) - in TypeScript)
 
-https://youtu.be/jTQEb96XPSE
+Approach taken:
+- Extract Code Fragments into New Methods with Descriptive Names
+- Use a Collecting Parameter to Pass Required Information
+<br>
+
+### To be continued ([Part 13](https://github.com/wafibismail/refactoring-practice/blob/master/part13.ts) - in TypeScript)
