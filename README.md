@@ -130,3 +130,11 @@ Advantages:
 <br>
 
 ### Replacing Primitive Types with A Class / Improve Type Safety ([Part 15](https://github.com/wafibismail/refactoring-practice/blob/master/part15-type_safety.ts) - in TypeScript)
+
+Aim:
+- Eliminate all operations on values that are not of the appropriate data type
+<br>
+
+How:
+- Protect the program from bad input
+- Replace a primitive data type with a class
