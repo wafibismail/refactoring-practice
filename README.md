@@ -140,7 +140,7 @@ How:
 - Replace a primitive data type with a class
 <br>
 
-### [Not finished yet] Using Decorator Pattern to Move Embellishments ([Part 16](https://github.com/wafibismail/refactoring-practice/blob/master/part16-decorator_pattern.ts) - in TypeScript)
+### Using Decorator Pattern to Move Embellishments ([Part 16](https://github.com/wafibismail/refactoring-practice/blob/master/part16-decorator_pattern.ts) - in TypeScript)
 
 Embellishment:
 - means special case behaviour
@@ -154,3 +154,13 @@ About Decorator Pattern:
 Bonus:
 - In applying the Decorator Pattern, Interface Segregation principle can also be satisfied, i.e.
   - Use many specific interfaces rather than one general purpose interface
+<br>
+
+### Using Visitor Pattern to Add Functionality ([Part 17](https://github.com/wafibismail/refactoring-practice/blob/master/part17-visitor_pattern.ts) - in TypeScript)
+
+When to use:
+- Can be used when we want to perform a similar calculation on many objects
+
+Involves:
+- Method overloading
+- Passing objects back and forth for data access
