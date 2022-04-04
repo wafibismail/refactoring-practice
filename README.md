@@ -6,9 +6,9 @@ The exercises are based on Derek Banas's [Code Refactoring](https://www.youtube.
 
 ### Language difference
 
-Due to my personal inclination towards utilizing TypeScript in my projects, it seemed better for me to translate the Java codes to TypeScript. (which I only started from Part 4 onwards)<br>
+Due to my personal inclination towards utilizing TypeScript in my projects, it seemed better for me to translate the Java codes to TypeScript, though which I only started doing from Part 4 onwards.<br>
 <br>
-I still follow the exact programming logic used in the Derek's demos.
+In these parts I still follow the exact programming logic used in the Derek's demos.
 
 ## Bad smells:
 
