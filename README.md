@@ -164,3 +164,9 @@ When to use:
 Involves:
 - Method overloading
 - Passing objects back and forth for data access
+<br>
+
+### Abstract Factory Pattern ([Part 18](https://github.com/wafibismail/refactoring-practice/blob/master/part18-abstract_factory_pattern.ts) - in TypeScript)
+
+About:
+- One of the most difficult to understand design patterns
